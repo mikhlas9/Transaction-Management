@@ -30,40 +30,40 @@ const EditTransactionForm = ({ transaction, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full" id="my-modal">
-      <div className="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+    <div className="fixed inset-0 bg-black bg-opacity-50 overflow-y-auto h-full w-full" id="my-modal">
+      <div className="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-gray-800">
         <div className="mt-3 text-center">
-          <h3 className="text-lg leading-6 font-medium text-gray-900">Edit Transaction</h3>
+          <h3 className="text-lg leading-6 font-medium text-gray-100">Edit Transaction</h3>
           <form onSubmit={handleSubmit} className="mt-2 text-left">
             <div className="mt-2">
-              <label htmlFor="amount" className="block text-sm font-medium text-gray-700">Amount</label>
+              <label htmlFor="amount" className="block text-sm font-medium text-gray-300">Amount</label>
               <input
                 type="number"
                 id="amount"
                 value={amount}
                 onChange={(e) => setAmount(Number(e.target.value))}
                 required
-                className="mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 h-12 px-4"
+                className="mt-1 block w-full rounded-md border-2 border-gray-600 bg-gray-700 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 h-12 px-4 text-white"
                 />
             </div>
             <div className="mt-2">
-              <label htmlFor="description" className="block text-sm font-medium text-gray-700">Description</label>
+              <label htmlFor="description" className="block text-sm font-medium text-gray-300">Description</label>
               <input
                 type="text"
                 id="description"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 required
-                className="mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 h-12 px-4"
+                className="mt-1 block w-full rounded-md border-2 border-gray-600 bg-gray-700 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 h-12 px-4 text-white"
                 />
             </div>
             <div className="mt-2">
-              <label htmlFor="type" className="block text-sm font-medium text-gray-700">Type</label>
+              <label htmlFor="type" className="block text-sm font-medium text-gray-300">Type</label>
               <select
                 id="type"
                 value={type}
                 onChange={(e) => setType(e.target.value)}
-          className="mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 h-12 px-4"
+          className="mt-1 block w-full rounded-md border-2 border-gray-600 bg-gray-700 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 h-12 px-4 text-white"
               >
                 <option value="expense">Expense</option>
                 <option value="income">Income</option>
