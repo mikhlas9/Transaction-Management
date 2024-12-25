@@ -29,35 +29,37 @@ function App() {
   }, []);
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-8 text-center text-indigo-600">Transaction Management</h1>
-      <div className="grid md:grid-cols-2 gap-8 mb-8">
-        <div className="bg-white p-6 rounded-lg shadow-md">
-          <h2 className="text-xl font-semibold mb-4">Summary</h2>
-          <div className="flex justify-between">
-            <div>
-              <p className="text-sm text-gray-600">Total Income</p>
-              <p className="text-2xl font-bold text-green-600">${totalIncome.toFixed(2)}</p>
-            </div>
-            <div>
-              <p className="text-sm text-gray-600">Total Expenses</p>
-              <p className="text-2xl font-bold text-red-600">${totalExpenses.toFixed(2)}</p>
-            </div>
-            <div>
-              <p className="text-sm text-gray-600">Balance</p>
-              <p className={`text-2xl font-bold ${totalIncome - totalExpenses >= 0 ? 'text-green-600' : 'text-red-600'}`}>
-                ${(totalIncome - totalExpenses).toFixed(2)}
-              </p>
+    <div className="min-h-screen bg-gray-900 text-gray-100">
+      <div className="container mx-auto p-4">
+        <h1 className="text-4xl font-bold mb-8 text-center text-indigo-400">Transaction Management</h1>
+        <div className="grid md:grid-cols-2 gap-8 mb-8">
+          <div className="bg-gray-800 p-6 rounded-lg shadow-md">
+            <h2 className="text-2xl font-semibold mb-4 text-indigo-300">Summary</h2>
+            <div className="flex justify-between">
+              <div>
+                <p className="text-sm text-gray-400">Total Income</p>
+                <p className="text-2xl md:text-2xl text-lg font-bold text-green-400">${totalIncome.toFixed(2)}</p>
+              </div>
+              <div>
+                <p className="text-sm text-gray-400">Total Expenses</p>
+                <p className="text-2xl md:text-2xl text-lg font-bold text-red-400">${totalExpenses.toFixed(2)}</p>
+              </div>
+              <div>
+                <p className="text-sm text-gray-400">Balance</p>
+                <p className={`text-2xl md:text-2xl text-lg font-bold ${totalIncome - totalExpenses >= 0 ? 'text-green-400' : 'text-red-400'}`}>
+                  ${(totalIncome - totalExpenses).toFixed(2)}
+                </p>
+              </div>
             </div>
           </div>
+          <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
+            <h2 className="text-2xl font-semibold mb-4 text-indigo-300">Add New Transaction</h2>
+            <AddTransactionForm />
+          </div>
         </div>
-        <div className="bg-white p-6 rounded-lg shadow-md">
-          <h2 className="text-xl font-semibold mb-4">Add New Transaction</h2>
-          <AddTransactionForm />
+        <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
+          <TransactionList />
         </div>
-      </div>
-      <div className="bg-white p-6 rounded-lg shadow-md">
-        <TransactionList />
       </div>
     </div>
   );
